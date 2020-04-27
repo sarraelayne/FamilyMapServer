@@ -1,0 +1,34 @@
+CREATE TABLE users (
+   UserName text NON NULL,
+   Password text NON NULL,
+   Email text NON NULL,
+   FirstName text NON NULL,
+   LastName text NON NULL,
+   Gender text,
+   PersonID text NON NULL
+);
+CREATE TABLE auth_tok (
+   AuthTok text NON NULL,
+   UserName text NON NULL,
+);
+CREATE TABLE person (
+   PersonID text NON NULL,
+   Descendant text (the user/username), 
+   FirstName text NON NULL,
+   LastName text NON NULL,
+   Gender text,
+   Father text,
+   Mother text,
+   Spouse text
+);
+CREATE TABLE event (
+   EventID next NON NULL,
+   Descendant text (the user),
+   Person text (this is the personID),
+   Lat numeric double (assuming the use of decimal degree system),
+   Long numeric double (decimal degrees),
+   Country text,
+   City text,
+   EventType text,
+   Year numeric integer
+);
