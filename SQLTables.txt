@@ -1,0 +1,38 @@
+CREATE TABLE "users" (
+   "UserName" TEXT NOT NULL UNIQUE,
+   "Password" TEXT NOT NULL,
+   "Email" TEXT NOT NULL,
+   "FirstName" TEXT NOT NULL,
+   "LastName" TEXT NOT NULL,
+   "Gender" TEXT NOT NULL,
+   "PersonID" TEXT NOT NULL UNIQUE,
+   PRIMARY KEY("PersonID")
+);
+CREATE TABLE "auth_tok" (
+   "AuthTok" TEXT NOT NULL UNIQUE,
+   "UserName" TEXT NOT NULL,
+   PRIMARY KEY("AuthTok")
+);
+CREATE TABLE "person" (
+   "PersonID" TEXT NOT NULL UNIQUE,
+   "AssociatedUsername" TEXT NOT NULL, 
+   "FirstName" TEXT NOT NULL,
+   "LastName" TEXT NOT NULL,
+   "Gender" TEXT NOT NULL,
+   "Father" TEXT,
+   "Mother" TEXT,
+   "Spouse" TEXT,
+   PRIMARY KEY("PersonID")
+);
+CREATE TABLE "event" (
+   "EventID" TEXT NOT NULL UNIQUE,
+   "AssociatedUsername" TEXT NOT NULL,
+   "PersonID" TEXT NOT NULL,
+   "Lat" NUMERIC NOT NULL,
+   "Long" NUMERIC NOT NULL,
+   "Country" TEXT NOT NULL,
+   "City" TEXT NOT NULL,
+   "EventType" TEXT NOT NULL,
+   "Year" INTEGER NOT NULL,
+   PRIMARY KEY("EventID"
+);
